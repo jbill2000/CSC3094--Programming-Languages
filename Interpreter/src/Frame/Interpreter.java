@@ -196,6 +196,7 @@ public class Interpreter {
                             getpixelcmd += " " + scan.next();
                         }
                         commands.add(getpixelcmd);
+                        break;
                     }
                     default: {
                         if (scan.hasNext()) {
@@ -570,7 +571,6 @@ public class Interpreter {
                     break;
                 }
                 case "%": {
-
                     int x;
                     int y;
                     int modulus;
@@ -582,7 +582,7 @@ public class Interpreter {
                     //int modulus=0;
                     //int num=0;
                     //int numdos=0;
-                    if (zemap.containsKey("int " + keycheck) && zemap.containsKey("int " + extravar) && zemap.containsKey("int " + numbertobemod)) {
+                    /*if (zemap.containsKey("int " + keycheck) && zemap.containsKey("int " + extravar) && zemap.containsKey("int " + numbertobemod)) {
                         modulus = zemap.get("int " + keycheck);
                         x = zemap.get("int " + extravar);
                         y = zemap.get("int " + numbertobemod);
@@ -612,11 +612,11 @@ public class Interpreter {
                         modulus=x%y;
                         zemap.put("int "+keycheck,modulus);
                         //return modulus;
-                    }
+                    }*/
 
                     //return modulus;
-                    //modulus = modulusop(keycheck, extravar, numbertobemod);
-                    //zemap.put("int " + keycheck, modulus);
+                    modulus = modulusop(keycheck, extravar, numbertobemod);
+                    zemap.put("int " + keycheck, modulus);
                     /*if(zemap.containsKey("int "+extravar))
                     {
                         x=zemap.get("int "+extravar);
@@ -714,18 +714,14 @@ public class Interpreter {
                     String keycheck = stringscan.next();
                     String keycheck2 = stringscan.next();
                     String numbertobecompared = stringscan.next();
-
-
                     //Look at what you need to do with the extra var
                         int keycheck2val=0;
                         int numbertobecomparedvalue=0;
-
-
                     if(zemap.containsKey("int "+keycheck2))
                     {
                         keycheck2val = zemap.get("int "+keycheck2);
                     }
-                    else
+                    else if(!zemap.containsKey("int "+keycheck2))
                     {
                         keycheck2val = Integer.valueOf(keycheck2);
                     }
@@ -733,7 +729,7 @@ public class Interpreter {
                     {
                         numbertobecomparedvalue = zemap.get("int "+numbertobecompared);
                     }
-                    else
+                    else if(!zemap.containsKey(numbertobecompared))
                     {
                         numbertobecomparedvalue = Integer.valueOf(numbertobecompared);
                     }
@@ -750,7 +746,7 @@ public class Interpreter {
                         {
                             zemap.put("bool "+keycheck, 1);
                         }
-                        else
+                        else if(keycheck2val != numbertobecomparedvalue)
                             zemap.put("bool "+keycheck,0);
                     }
                         //Checks if map contains keycheck2, if it does great.
@@ -1001,7 +997,7 @@ public class Interpreter {
                             zemap.put("bool " + keycheck, 0);
                         }
                     } else if (zemap.containsKey("bool " + keycheck) && zemap.containsKey("int " + keycheck2)) {
-                        int number = Integer.parseInt(numbertobecompared);
+                        int number = Integer.valueOf(numbertobecompared);
                         //True
                         if (zemap.get("int " + keycheck2) >= number) {
                             zemap.put("bool " + keycheck, 1);
@@ -1011,7 +1007,7 @@ public class Interpreter {
                             zemap.put("bool " + keycheck, 0);
                         }
                     } else if (zemap.containsKey("bool " + keycheck) && zemap.containsKey("int " + numbertobecompared)) {
-                        int number = Integer.parseInt(keycheck2);
+                        int number = Integer.valueOf(keycheck2);
                         //True
                         if (zemap.get("int " + numbertobecompared) >= number) {
                             zemap.put("bool " + keycheck, 1);
@@ -1021,8 +1017,8 @@ public class Interpreter {
                             zemap.put("bool " + keycheck, 0);
                         }
                     } else if (zemap.containsKey("bool " + keycheck)) {
-                        int number = Integer.parseInt(numbertobecompared);
-                        int num2 = Integer.parseInt(keycheck2);
+                        int number = Integer.valueOf(numbertobecompared);
+                        int num2 = Integer.valueOf(keycheck2);
                         //True
                         if (num2 >= number) {
                             zemap.put("bool " + keycheck, 1);
@@ -1124,17 +1120,16 @@ public class Interpreter {
                         System.out.println("x is " + x);
                         y = zemap.get("int " + extravar);
                         System.out.println("y is " + y);
-                        z = Integer.parseInt(numbertobemodulus);
+                        z = Integer.valueOf(numbertobemodulus);
                         System.out.println("z is " + z);
                         if (z == 0) {
                             // do nothing
                         }
-
                         zemap.put("int " + keycheck, zemap.get("int " + extravar) & Integer.parseInt(numbertobemodulus));
                     } else if (zemap.containsKey("int " + keycheck) && zemap.containsKey("int " + numbertobemodulus)) {
                         x = zemap.get("int " + keycheck);
                         System.out.println("x is " + x);
-                        y = Integer.parseInt(extravar);
+                        y = Integer.valueOf(extravar);
                         System.out.println("y is " + y);
                         z = zemap.get("int " + numbertobemodulus);
                         System.out.println("z is " + z);
@@ -1142,10 +1137,9 @@ public class Interpreter {
                         zemap.put("int " + keycheck, Integer.parseInt(extravar) & zemap.get("int " + numbertobemodulus));
                     } else if (zemap.containsKey("int " + keycheck)) {
                         x = zemap.get("int " + keycheck);
-                        y = Integer.parseInt(extravar);
-                        z = Integer.parseInt(numbertobemodulus);
-                        x = y % z;
-                        zemap.put("int " + keycheck, Integer.parseInt(extravar) & Integer.parseInt(numbertobemodulus));
+                        y = Integer.valueOf(extravar);
+                        z = Integer.valueOf(numbertobemodulus);
+                        zemap.put("int " + keycheck, y & z);
                     }
                     break;
                 }
@@ -1181,14 +1175,14 @@ public class Interpreter {
                         System.out.println("x is " + x);
                         y = zemap.get("int " + extravar);
                         System.out.println("y is " + y);
-                        z = Integer.parseInt(numbertobemodulus);
+                        z = Integer.valueOf(numbertobemodulus);
                         System.out.println("z is " + z);
 
                         zemap.put("int " + keycheck, zemap.get("int " + extravar) | Integer.parseInt(numbertobemodulus));
                     } else if (zemap.containsKey("int " + keycheck) && zemap.containsKey("int " + numbertobemodulus)) {
                         x = zemap.get("int " + keycheck);
                         System.out.println("x is " + x);
-                        y = Integer.parseInt(extravar);
+                        y = Integer.valueOf(extravar);
                         System.out.println("y is " + y);
                         z = zemap.get("int " + numbertobemodulus);
                         System.out.println("z is " + z);
@@ -1367,12 +1361,38 @@ public class Interpreter {
                 }
                 case "getpixel": {
                     //Image image = panel.getImage();
+                    String colorstore = stringscan.next();
                     String xhold = stringscan.next();
                     String yhold = stringscan.next();
-                    int x = zemap.get("int " + xhold);
-                    int y = zemap.get("int " + yhold);
+                    int x;
+                    int y;
+                    int color;
+                    if(zemap.containsKey("int "+xhold))
+                    {
+                        x=zemap.get("int " + xhold);
+                    }
+                    else
+                    {
+                        x=Integer.valueOf(xhold);
+                    }
+                    if(zemap.containsKey("int "+yhold))
+                    {
+                        y=zemap.get("int "+yhold);
+                    }
+                    else {
+                        y = Integer.valueOf(yhold);
+                    }
+
                     int colorrecieve = image.getColor(x, y);
 
+                    if(zemap.containsKey("int "+colorstore))
+                    {
+                        zemap.put("int "+colorstore,colorrecieve);
+                    }
+                    else if(zemap.containsKey("color "+colorstore))
+                    {
+                        zemap.put("color "+colorstore,colorrecieve);
+                    }
                     break;
                 }
             }
@@ -1381,11 +1401,12 @@ public class Interpreter {
 
         //System.out.println("left do while");
 
-            for (int j = 0; j < zemap.size() - 1; j++) {
+            for (int j = 0; j < zemap.size()-1; j++) {
                 Scanner clear = new Scanner(commands.get(j));
                 String nom = clear.next();
                 String nom2electricboogaloo=clear.next();
                 System.out.println(nom);
+                System.out.println(nom2electricboogaloo);
                 if (zemap.containsKey("int " + nom2electricboogaloo)) {
                     zemap.put("int " + nom2electricboogaloo, 0);
                     System.out.println("Cleared nom");
@@ -1394,9 +1415,9 @@ public class Interpreter {
                     zemap.put("bool " + nom2electricboogaloo, 0);
                     System.out.println("Cleared nom");
                 }
-                if (zemap.containsKey("label " + nom2electricboogaloo)) {
-                    zemap.put("label " + nom2electricboogaloo, 0);
-                    System.out.println("Cleared nom");
+                if(zemap.containsKey("label  "+nom2electricboogaloo))
+                {
+                    zemap.put("label "+nom2electricboogaloo,0);
                 }
             }
 
@@ -1490,13 +1511,13 @@ public class Interpreter {
         } else if ((zemap.containsKey("int " + storage) && zemap.containsKey("int " + num1))) {
             product = zemap.get("int " + storage);
             num = zemap.get("int " + num1);
-            numdos =  Integer.parseInt(num2);
+            numdos =  Integer.valueOf(num2);
             product = num * numdos;
 
             return product;
         } else if ((zemap.containsKey("int " + storage) && zemap.containsKey("int " + num2))) {
             product = zemap.get("int " + storage);
-            num = Integer.parseInt(num1);
+            num = Integer.valueOf(num1);
             numdos = zemap.get("int " + num2);
 
             product=num*numdos;
@@ -1505,8 +1526,8 @@ public class Interpreter {
 
         } else if (zemap.containsKey("int " + storage)) {
             product = zemap.get("int " + storage);
-            num= Integer.parseInt(num1);
-            numdos = Integer.parseInt(num2);
+            num= Integer.valueOf(num1);
+            numdos = Integer.valueOf(num2);
             product=num*numdos;
             return product;
         }
@@ -1527,13 +1548,13 @@ public class Interpreter {
         } else if ((zemap.containsKey("int " + storage) && zemap.containsKey("int " + num1))) {
             quotient = zemap.get("int " + storage);
             num = zemap.get("int " + num1);
-            numdos =  Integer.parseInt(num2);
+            numdos =  Integer.valueOf(num2);
             quotient = num / numdos;
 
             return quotient;
         } else if ((zemap.containsKey("int " + storage) && zemap.containsKey("int " + num2))) {
             quotient= zemap.get("int " + storage);
-            num = Integer.parseInt(num1);
+            num = Integer.valueOf(num1);
             numdos = zemap.get("int " + num2);
 
             quotient=num/numdos;
@@ -1542,8 +1563,8 @@ public class Interpreter {
 
         } else if (zemap.containsKey("int " + storage)) {
             quotient = zemap.get("int " + storage);
-            num= Integer.parseInt(num1);
-            numdos = Integer.parseInt(num2);
+            num= Integer.valueOf(num1);
+            numdos = Integer.valueOf(num2);
             quotient=num/numdos;
             return quotient;
         }
@@ -1564,23 +1585,20 @@ public class Interpreter {
         } else if ((zemap.containsKey("int " + storage) && zemap.containsKey("int " + num1))) {
             modulus = zemap.get("int " + storage);
             num = zemap.get("int " + num1);
-            numdos =  Integer.parseInt(num2);
+            numdos =  Integer.valueOf(num2);
             modulus = num % numdos;
-
             return modulus;
         } else if ((zemap.containsKey("int " + storage) && zemap.containsKey("int " + num2))) {
             modulus= zemap.get("int " + storage);
-            num = Integer.parseInt(num1);
+            num = Integer.valueOf(num1);
             numdos = zemap.get("int " + num2);
-
             modulus=num%numdos;
-
             return modulus;
 
         } else if (zemap.containsKey("int " + storage)) {
             modulus = zemap.get("int " + storage);
-            num= Integer.parseInt(num1);
-            numdos = Integer.parseInt(num2);
+            num= Integer.valueOf(num1);
+            numdos = Integer.valueOf(num2);
             modulus=num%numdos;
             return modulus;
         }
@@ -1589,6 +1607,7 @@ public class Interpreter {
     }
     public void equalsop(String storage, String valuespot)
     {
+        int boolval= 0;
         if (zemap.containsKey("int " + storage) && zemap.containsKey("int " + valuespot)) {
             zemap.put("int " + storage,zemap.get("int " + valuespot));
         } else if (zemap.containsKey("bool " + storage) && zemap.containsKey("bool " + valuespot)) {
@@ -1596,6 +1615,17 @@ public class Interpreter {
         } else if (zemap.containsKey("int " + storage)) {
             zemap.put("int " + storage, Integer.valueOf(valuespot));
         }
+        /*else if(zemap.containsKey("bool "+storage))
+        {
+            if(valuespot.equals("true"))
+            {
+                boolval=1;
+                zemap.put("bool "+storage,boolval);
+            }
+            else
+                boolval=0;
+            zemap.put("bool "+storage,boolval);
+        }*/
     }
 
 }
