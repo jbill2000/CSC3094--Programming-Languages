@@ -1,0 +1,29 @@
+label entry
+label bybrendenowen
+int x
+int y
+int i
+bool breakx
+bool breaky
+int t
+time t
+% t t 255
+= x 0
+label forx
+== breakx x 100
+jumpif breakx exitx
+= y 0
+label fory
+== breaky y 100
+jumpif breaky exity
+& i t x
+| i y i
+* i i 8818723
+% i i 255
+setpixel x y i
++ y y 1
+jump fory
+label exity
++ x x 1
+jump forx
+label exitx

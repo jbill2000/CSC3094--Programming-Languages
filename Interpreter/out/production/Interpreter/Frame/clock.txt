@@ -1,0 +1,139 @@
+label entry
+label bybrendenowen
+int pos int x int y int xl int yl int i int n int d
+int quad int qtest int sinmult int cosmult int sinval int cosval
+int usedegree int degree
+int value int length int lengthmax
+
+int radius int r
+= radius 46
+- r radius 5
+int midpoint
+= midpoint 49
+bool break
+
+int t int seconds int minutes int hours
+
+time t
+% t t 86400000
+/ t t 1000
+= seconds t
+* minutes seconds 6
+/ minutes minutes 60
+* hours seconds 3
+/ hours hours 360
+
+
+= pos 0 = x 0
+label setup
+== break pos 90
+jumpif break setup_exit
+= n 180 - n n x = d n * n n x * n n 1020
+* d d x - d 40500 d / value n d
+setpixel pos 0 value
++ x x 2
++ pos pos 1
+jump setup
+label setup_exit
+
+label circle
+== break degree 360
+jumpif break circle_exit
+
+= qtest degree
+= quad 0 label getquad > break 90 qtest jumpif break getquad_exit + quad quad 1 - qtest qtest 90 jump getquad label getquad_exit
+/ sinmult quad 2 * sinmult sinmult -2 + sinmult sinmult 1
+% cosmult quad 3 + cosmult cosmult 1 / cosmult cosmult 2 * cosmult cosmult -2 + cosmult cosmult 1
+% usedegree degree 180 / usedegree usedegree 2 getpixel y usedegree 0 * y y sinmult
++ usedegree degree 90 % usedegree usedegree 180 / usedegree usedegree 2 getpixel x usedegree 0 * x x cosmult
+
+* yl y radius / yl yl 255 + yl yl midpoint
+* xl x radius / xl xl 255 + xl xl midpoint
+setpixel xl yl 255
+
+% pos degree 30
+> break pos 0
+jumpif break skipdot
+
+* yl y r / yl yl 255 + yl yl midpoint
+* xl x r / xl xl 255 + xl xl midpoint
+setpixel xl yl 255
+
+label skipdot
+
++ degree degree 2
+jump circle
+label circle_exit
+
+
+% seconds seconds 60
+* degree seconds 6
+= qtest degree
+= quad 0 label getquad_s > break 90 qtest jumpif break getquad_s_exit + quad quad 1 - qtest qtest 90 jump getquad_s label getquad_s_exit
+/ sinmult quad 2 * sinmult sinmult -2 + sinmult sinmult 1
+% cosmult quad 3 + cosmult cosmult 1 / cosmult cosmult 2 * cosmult cosmult -2 + cosmult cosmult 1
+% usedegree degree 180 / usedegree usedegree 2 getpixel y usedegree 0 * y y sinmult
++ usedegree degree 90 % usedegree usedegree 180 / usedegree usedegree 2 getpixel x usedegree 0 * x x cosmult
+
+= length 1
+- lengthmax radius 2
+
+label seconds_draw
+> break length lengthmax
+jumpif break seconds_exit
+
+* yl y length / yl yl 255 + yl yl midpoint
+* xl x length / xl xl 255 + xl xl midpoint
+setpixel xl yl 255
+
++ length length 1
+jump seconds_draw
+label seconds_exit
+
+
+% degree minutes 360
+= qtest degree
+= quad 0 label getquad_m > break 90 qtest jumpif break getquad_m_exit + quad quad 1 - qtest qtest 90 jump getquad_m label getquad_m_exit
+/ sinmult quad 2 * sinmult sinmult -2 + sinmult sinmult 1
+% cosmult quad 3 + cosmult cosmult 1 / cosmult cosmult 2 * cosmult cosmult -2 + cosmult cosmult 1
+% usedegree degree 180 / usedegree usedegree 2 getpixel y usedegree 0 * y y sinmult
++ usedegree degree 90 % usedegree usedegree 180 / usedegree usedegree 2 getpixel x usedegree 0 * x x cosmult
+
+= length 1
+- lengthmax radius 4
+
+label minutes_draw
+> break length lengthmax
+jumpif break minutes_exit
+
+* yl y length / yl yl 255 + yl yl midpoint
+* xl x length / xl xl 255 + xl xl midpoint
+setpixel xl yl 255
+
++ length length 1
+jump minutes_draw
+label minutes_exit
+
+
+% degree hours 360
+= qtest degree
+= quad 0 label getquad_h > break 90 qtest jumpif break getquad_h_exit + quad quad 1 - qtest qtest 90 jump getquad_h label getquad_h_exit
+/ sinmult quad 2 * sinmult sinmult -2 + sinmult sinmult 1
+% cosmult quad 3 + cosmult cosmult 1 / cosmult cosmult 2 * cosmult cosmult -2 + cosmult cosmult 1
+% usedegree degree 180 / usedegree usedegree 2 getpixel y usedegree 0 * y y sinmult
++ usedegree degree 90 % usedegree usedegree 180 / usedegree usedegree 2 getpixel x usedegree 0 * x x cosmult
+
+= length 1
+/ lengthmax radius 2
+
+label hours_draw
+> break length lengthmax
+jumpif break hours_exit
+
+* yl y length / yl yl 255 + yl yl midpoint
+* xl x length / xl xl 255 + xl xl midpoint
+setpixel xl yl 255
+
++ length length 1
+jump hours_draw
+label hours_exit

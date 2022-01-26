@@ -1,0 +1,15 @@
+label entry
+int i
+= i 0
+int t
+time t
+/ t t 25
+% t t 100
+bool result
+label loopi
+== result i 100
+jumpif result exiti
+setpixel i t 255
++ i 1 i
+jump loopi
+label exiti

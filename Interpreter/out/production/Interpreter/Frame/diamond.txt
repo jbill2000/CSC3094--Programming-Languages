@@ -1,0 +1,53 @@
+label entry
+label bybrendenowen
+bool timerover
+int i
+int color
+= color 255
+int t
+time t
+/ t t 26
+% t t 400
+label fori
+bool break
+== break i 10
+jumpif break exiti
+int x
+- x t 200
+bool cabs
+> cabs x 0
+jumpif cabs returnabs1
+* x x -1
+label returnabs1
+/ x x 2
+bool max
+> max 100 x
+jumpif max skip1
+= x 99
+label skip1
+int y
+- y t 100
+> cabs y 0
+jumpif cabs returnabs2
+* y y -1
+label returnabs2
+- y 200 y
+> cabs y 0
+jumpif cabs returnabs3
+* y y -1
+label returnabs3
+/ y y 2
+> max 100 y
+jumpif max skip2
+= y 99
+label skip2
+setpixel x y color
+- color color 15
+- t t 2
+> timerover t 0
+jumpif timerover skiptimer
++ t t 400
+label skiptimer
++ i i 1
+jump fori
+label exiti

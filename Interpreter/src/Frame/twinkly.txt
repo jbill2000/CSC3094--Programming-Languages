@@ -1,0 +1,46 @@
+label entry
+label bybrendenowen
+int x
+int y
+int i
+bool break
+int color
+= color 10
+int t
+time t
+/ t t 300
+% t t 100
+int seed
+= seed 987654123
+% seed seed 134456
+label primei
+== break i t
+jumpif break primed
+* seed 8121 seed
++ seed seed 28411
+% seed seed 134456
+* seed 8121 seed
++ seed seed 28411
+% seed seed 134456
++ i i 1
+jump primei
+label primed
+= i 0
+label fori
+== break i 25
+jumpif break exiti
+* seed 8121 seed
++ seed seed 28411
+% seed seed 134456
+= x seed
+% x x 100
+* seed 8121 seed
++ seed seed 28411
+% seed seed 134456
+= y seed
+% y y 100
+setpixel x y color
++ i i 1
++ color color 10
+jump fori
+label exiti
