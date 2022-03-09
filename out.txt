@@ -1,0 +1,629 @@
+Inside the If Parentheses
+Token after advancing inside IF is ss
+Made it to bool A
+Made it to bool B
+Token Arriving at Bool B is ss
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is ss
+Token String after advancing in element is ==
+Leaving Element
+Leaving factor
+Coming back from factor, Token is ==
+Leaving POW
+Coming back from pow, token is ==
+Leaving EXPR
+Coming back from expr, token is ==
+Leaving Term
+Returned from term with token ==
+Token type after advancing in EE is ==
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is ss
+Token String after advancing in element is )
+Leaving Element
+Leaving factor
+Coming back from factor, Token is )
+Leaving POW
+Coming back from pow, token is )
+Leaving EXPR
+Coming back from expr, token is )
+Leaving Term
+leaving bool b 
+Leave Bool A
+
+) 
+ Token after dec type is dec
+Token after Semicolon in dec is dec
+Leaving Statement
+ Token after dec type is dec
+Token after = in dec is 10000
+Made it to bool A
+Made it to bool B
+Token Arriving at Bool B is 10000
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is 10000
+Constant 10000
+Leaving Element
+Leaving factor
+Coming back from factor, Token is ;
+Leaving POW
+Coming back from pow, token is ;
+Leaving EXPR
+Coming back from expr, token is ;
+Leaving Term
+Returned from term with token ;
+leaving bool b 
+Leave Bool A
+semi colon at end came back
+Leaving Statement
+Leaving Statement
+Returned from if
+Leaving Statement
+Inside the If Parentheses
+Token after advancing inside IF is aa
+Made it to bool A
+Made it to bool B
+Token Arriving at Bool B is aa
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is aa
+Token String after advancing in element is -
+Leaving Element
+Leaving factor
+Coming back from factor, Token is -
+Leaving POW
+Coming back from pow, token is -
+Leaving EXPR
+Coming back from expr, token is -
+Token inside while at start, inside term is -
+After advancing in term, current token is 3
+In expr
+In pow
+In factor
+In element
+Current token type in element is 3
+Constant 3
+Leaving Element
+Leaving factor
+Coming back from factor, Token is )
+Leaving POW
+Coming back from pow, token is )
+Leaving EXPR
+
+Leaving term, token is )
+Leaving Term
+Returned from term with token )
+leaving bool b 
+Leave Bool A
+
+) 
+Made it to Assign
+Made it to bool A
+Made it to bool B
+Token Arriving at Bool B is aa
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is aa
+Token String after advancing in element is -
+Leaving Element
+Leaving factor
+Coming back from factor, Token is -
+Leaving POW
+Coming back from pow, token is -
+Leaving EXPR
+Coming back from expr, token is -
+Token inside while at start, inside term is -
+After advancing in term, current token is 3
+In expr
+In pow
+In factor
+In element
+Current token type in element is 3
+Constant 3
+Leaving Element
+Leaving factor
+Coming back from factor, Token is ;
+Leaving POW
+Coming back from pow, token is ;
+Leaving EXPR
+
+Leaving term, token is ;
+Leaving Term
+Returned from term with token ;
+leaving bool b 
+Leave Bool A
+Leaving assign with for
+Leaving Statement
+Returned from if
+Leaving Statement
+Inside the For Parentheses
+ Token after dec type is i
+Token after = in dec is 0
+Made it to bool A
+Made it to bool B
+Token Arriving at Bool B is 0
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is 0
+Constant 0
+Leaving Element
+Leaving factor
+Coming back from factor, Token is ;
+Leaving POW
+Coming back from pow, token is ;
+Leaving EXPR
+Coming back from expr, token is ;
+Leaving Term
+Returned from term with token ;
+leaving bool b 
+Leave Bool A
+semi colon at end came back
+Made it to bool A
+Made it to bool B
+Token Arriving at Bool B is 10
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is 10
+Constant 10
+Leaving Element
+Leaving factor
+Coming back from factor, Token is >=
+Leaving POW
+Coming back from pow, token is >=
+Leaving EXPR
+Coming back from expr, token is >=
+Leaving Term
+Returned from term with token >=
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is i
+Token String after advancing in element is ;
+Leaving Element
+Leaving factor
+Coming back from factor, Token is ;
+Leaving POW
+Coming back from pow, token is ;
+Leaving EXPR
+Coming back from expr, token is ;
+Leaving Term
+leaving bool b 
+Leave Bool A
+Made it to Assign
+Made it to bool A
+Made it to bool B
+Token Arriving at Bool B is i
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is i
+Token String after advancing in element is +
+Leaving Element
+Leaving factor
+Coming back from factor, Token is +
+Leaving POW
+Coming back from pow, token is +
+Leaving EXPR
+Coming back from expr, token is +
+Token inside while at start, inside term is +
+After advancing in term, current token is 1
+In expr
+In pow
+In factor
+In element
+Current token type in element is 1
+Constant 1
+Leaving Element
+Leaving factor
+Coming back from factor, Token is ;
+Leaving POW
+Coming back from pow, token is ;
+Leaving EXPR
+
+Leaving term, token is ;
+Leaving Term
+Returned from term with token ;
+leaving bool b 
+Leave Bool A
+Leaving assign with )
+Left Assign in For
+After advancing in FOr, Current token type is {
+Function Call
+Leaving Statement
+Leaving Statement
+Leaving Statement
+Inside the For Parentheses
+ Token after dec type is i
+Token after = in dec is 0
+Made it to bool A
+Made it to bool B
+Token Arriving at Bool B is 0
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is 0
+Constant 0
+Leaving Element
+Leaving factor
+Coming back from factor, Token is ;
+Leaving POW
+Coming back from pow, token is ;
+Leaving EXPR
+Coming back from expr, token is ;
+Leaving Term
+Returned from term with token ;
+leaving bool b 
+Leave Bool A
+semi colon at end came back
+Made it to bool A
+Made it to bool B
+Token Arriving at Bool B is 10
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is 10
+Constant 10
+Leaving Element
+Leaving factor
+Coming back from factor, Token is >=
+Leaving POW
+Coming back from pow, token is >=
+Leaving EXPR
+Coming back from expr, token is >=
+Leaving Term
+Returned from term with token >=
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is i
+Token String after advancing in element is ;
+Leaving Element
+Leaving factor
+Coming back from factor, Token is ;
+Leaving POW
+Coming back from pow, token is ;
+Leaving EXPR
+Coming back from expr, token is ;
+Leaving Term
+leaving bool b 
+Leave Bool A
+Made it to Assign
+Made it to bool A
+Made it to bool B
+Token Arriving at Bool B is i
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is i
+Token String after advancing in element is +
+Leaving Element
+Leaving factor
+Coming back from factor, Token is +
+Leaving POW
+Coming back from pow, token is +
+Leaving EXPR
+Coming back from expr, token is +
+Token inside while at start, inside term is +
+After advancing in term, current token is 1
+In expr
+In pow
+In factor
+In element
+Current token type in element is 1
+Constant 1
+Leaving Element
+Leaving factor
+Coming back from factor, Token is ;
+Leaving POW
+Coming back from pow, token is ;
+Leaving EXPR
+
+Leaving term, token is ;
+Leaving Term
+Returned from term with token ;
+leaving bool b 
+Leave Bool A
+Leaving assign with )
+Left Assign in For
+After advancing in FOr, Current token type is hello
+Function Call
+Leaving Statement
+Leaving Statement
+Made it to Assign
+Made it to bool A
+Made it to bool B
+Token Arriving at Bool B is a
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is a
+Token String after advancing in element is +
+Leaving Element
+Leaving factor
+Coming back from factor, Token is +
+Leaving POW
+Coming back from pow, token is +
+Leaving EXPR
+Coming back from expr, token is +
+Token inside while at start, inside term is +
+After advancing in term, current token is a
+In expr
+In pow
+In factor
+In element
+Current token type in element is a
+Token String after advancing in element is -
+Leaving Element
+Leaving factor
+Coming back from factor, Token is -
+Leaving POW
+Coming back from pow, token is -
+Leaving EXPR
+
+Leaving term, token is -
+Token inside while at start, inside term is -
+After advancing in term, current token is a
+In expr
+In pow
+In factor
+In element
+Current token type in element is a
+Token String after advancing in element is /
+Leaving Element
+Leaving factor
+Coming back from factor, Token is /
+Leaving POW
+Coming back from pow, token is /
+In pow
+In factor
+In element
+Current token type in element is a
+Token String after advancing in element is *
+Leaving Element
+Leaving factor
+Coming back from factor, Token is *
+Leaving POW
+In pow
+In factor
+In element
+Current token type in element is a
+Token String after advancing in element is amp
+Leaving Element
+Leaving factor
+Coming back from factor, Token is amp
+Leaving POW
+Leaving EXPR
+
+Leaving term, token is amp
+Leaving Term
+Returned from term with token amp
+leaving bool b 
+Made it to bool B
+Token Arriving at Bool B is a
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is a
+Token String after advancing in element is orr
+Leaving Element
+Leaving factor
+Coming back from factor, Token is orr
+Leaving POW
+Coming back from pow, token is orr
+Leaving EXPR
+Coming back from expr, token is orr
+Leaving Term
+Returned from term with token orr
+leaving bool b 
+Made it to bool B
+Token Arriving at Bool B is a
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is a
+Token String after advancing in element is pow
+Leaving Element
+Leaving factor
+Coming back from factor, Token is pow
+Goes inside pow loop
+In factor
+In element
+Current token type in element is a
+Token String after advancing in element is ;
+Leaving Element
+Leaving factor
+
+Leaving POW
+Coming back from pow, token is ;
+Leaving EXPR
+Coming back from expr, token is ;
+Leaving Term
+Returned from term with token ;
+leaving bool b 
+Leave Bool A
+Leaving assign with return
+Leaving Statement
+Hit ReturnMade it to bool A
+Made it to bool B
+Token Arriving at Bool B is five
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is five
+Token String after advancing in element is ,
+Leaving Element
+Leaving factor
+Coming back from factor, Token is ,
+Leaving POW
+Coming back from pow, token is ,
+Leaving EXPR
+Coming back from expr, token is ,
+Leaving Term
+Returned from term with token ,
+leaving bool b 
+Leave Bool A
+Made it to bool A
+Made it to bool B
+Token Arriving at Bool B is sdfsdf
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is sdfsdf
+Token String after advancing in element is ,
+Leaving Element
+Leaving factor
+Coming back from factor, Token is ,
+Leaving POW
+Coming back from pow, token is ,
+Leaving EXPR
+Coming back from expr, token is ,
+Leaving Term
+Returned from term with token ,
+leaving bool b 
+Leave Bool A
+Made it to bool A
+Made it to bool B
+Token Arriving at Bool B is sdfsd
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is sdfsd
+Token String after advancing in element is ,
+Leaving Element
+Leaving factor
+Coming back from factor, Token is ,
+Leaving POW
+Coming back from pow, token is ,
+Leaving EXPR
+Coming back from expr, token is ,
+Leaving Term
+Returned from term with token ,
+leaving bool b 
+Leave Bool A
+Made it to bool A
+Made it to bool B
+Token Arriving at Bool B is 33
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is 33
+Constant 33
+Leaving Element
+Leaving factor
+Coming back from factor, Token is +
+Leaving POW
+Coming back from pow, token is +
+Leaving EXPR
+Coming back from expr, token is +
+Token inside while at start, inside term is +
+After advancing in term, current token is 22
+In expr
+In pow
+In factor
+In element
+Current token type in element is 22
+Constant 22
+Leaving Element
+Leaving factor
+Coming back from factor, Token is ;
+Leaving POW
+Coming back from pow, token is ;
+Leaving EXPR
+
+Leaving term, token is ;
+Leaving Term
+Returned from term with token ;
+leaving bool b 
+Leave Bool A
+Leaving Statement
+Hit ReturnLeaving Statement
+Hit ReturnMade it to bool A
+Made it to bool B
+Token Arriving at Bool B is a
+In term
+In expr
+In pow
+In factor
+In element
+Current token type in element is a
+Token String after advancing in element is -
+Leaving Element
+Leaving factor
+Coming back from factor, Token is -
+Leaving POW
+Coming back from pow, token is -
+Leaving EXPR
+Coming back from expr, token is -
+Token inside while at start, inside term is -
+After advancing in term, current token is -1
+In expr
+In pow
+In factor
+In element
+Current token type in element is -1
+Constant -1
+Leaving Element
+Leaving factor
+Coming back from factor, Token is ;
+Leaving POW
+Coming back from pow, token is ;
+Leaving EXPR
+
+Leaving term, token is ;
+Leaving Term
+Returned from term with token ;
+leaving bool b 
+Leave Bool A
+Leaving Statement
+type, type2, type3 hello(type name, hheh eheh, sdfd sdffsd)
+{
+}

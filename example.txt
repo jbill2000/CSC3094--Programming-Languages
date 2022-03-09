@@ -1,0 +1,20 @@
+type, type2, type3 hello(type name, hheh eheh, sdfd sdffsd)
+{
+    if (ss == ss)
+    {
+        dec dec;
+        dec dec = 10000;
+    }
+    if (aa - 3)
+       aa = aa - 3;
+    for (int i = 0; 10 >= i; i = i + 1;)
+    {
+          hello();
+    }
+    for (int i = 0; 10 >= i; i = i + 1;)
+          hello();
+    a = a + a - a / a * a amp a orr a pow a;
+    return five, sdfsdf, sdfsd, 33 + 22;
+    return;
+    return a - -1;
+}
