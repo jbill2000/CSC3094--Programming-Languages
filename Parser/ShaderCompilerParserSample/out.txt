@@ -1,0 +1,9 @@
+type ,0x60000095d160 hello(type name, hheh eheh, sdfd sdffsd)
+{
+}
+type ,0x60000095d140 hello(type name, hheh eheh, sdfd sdffsd)
+{
+}
+type ,0x60000095d180 hello(type name)
+{
+}

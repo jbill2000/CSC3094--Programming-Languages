@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -arch x86_64 -mmacosx-version-min=12.0 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/Scanner.dir/main.cpp.o -o Scanner 

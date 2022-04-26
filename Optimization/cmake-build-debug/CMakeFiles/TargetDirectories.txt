@@ -1,0 +1,3 @@
+/Users/jeremybill/CLionProjects/Optimization/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/jeremybill/CLionProjects/Optimization/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/jeremybill/CLionProjects/Optimization/cmake-build-debug/CMakeFiles/Optimization.dir
